@@ -1,16 +1,19 @@
-n = str(input("Digite um número inteiro com no máximo 1000 dígitos: "))
-lista = []
+aux = int(input('Digite um numero: '))
 
-for i in n:
-  lista.append(i)
-
-s = 0
-for i in range(len(lista)):
-  a = int(lista[i])
-  s = s + a
-
-if s % 9 == 0:
-  print("true")
-
+a = 1
+if aux%9 == 0:
+   
+  while aux> 9:
+  
+    aux = sum(int (i) for i in str(aux))
+    if aux == 9:
+      a = a + 1
+      print("igual a 9")
+    else:
+      a = a + 1
+      aux = sum(int (i) for i in str(aux))
+  print("True")
+ #print(aux)
+  print(a)
 else:
-  print("false")
+  print("False")
